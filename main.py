@@ -15,9 +15,10 @@ async def ping(ctx):
     t2 = time.perf_counter()
     await msg1.edit(content = msg1.content + f'\nIt took me **{round((t2 - t1)*1000)}ms** to respond.')
     print ((t2 - t1)*1000)
+    print(ctx)
 
 @bot.command()
-async def roll(ctx, faces: int):
+async def roll(ctx, faces = 6):
     numb = random.randint(1, faces)
     out = f"You rolled a **{numb}**! Play again?"
     await ctx.send(out)
@@ -33,19 +34,21 @@ class sev():
             seven bet - params: bet val, under/over/at
             seven help - no params
         """
+        print(ctx)
         await self.problem.callback(self,ctx)
 
     @seven.command()
     @commands.has_permissions(embed_links = True)
-    async def problem(self,ctx):
+    async def problem(self, ctx):
         outEmbed = discord.Embed()
         outEmbed.color = discord.Color.light_grey()
         outEmbed.title = "How to play:"
         outEmbed.description = "The game's simple. Two dice will be rolled, and their sum taken. You will try to bet if the sum will be either over, at, or under 7. "
         outEmbed.add_field(name = "That's great, how do I join?",
                                           value = "Use command ````seven bet <bet>``` to play the game.\n Replace ```<bet>``` with \"over\" to bet over 7, \"at\" for at 7, and \"under\"")
-        outEmbed.add_field(name = "How much money do I win?",
+        outEmbed.add_field(name = "How much money do I   win?",
                                           value = "If you win and your bet **wasn't** \"at seven\", you'll get double your bet back. If you win and your bet **was** \"at seven\", you will get **four times*** your bet back")
+        print(ctx)
 
     @seven.command()
     async def roll(self,ctx, bet: str):
