@@ -23,8 +23,7 @@ for ext in os.listdir('Bill Bot/cogs'):
 """
 
 initial_extensions = ['cogs.general',
-                                 'cogs.seven',
-                                 'cogs.blackJack']
+                                 'cogs.seven']
 
 #Eviee way of loading cogs (More manual)
 if __name__ == '__main__':

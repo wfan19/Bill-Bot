@@ -33,9 +33,6 @@ class sevenCog:
             await ctx.send(embed = outEmbed)
             print('problem')
 
-    global m2
-    m2 = ""
-
     @seven.command()
     async def roll(self,ctx, bet: str):
             # bet is betting under, at, or above
