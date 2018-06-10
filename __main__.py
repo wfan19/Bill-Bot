@@ -41,4 +41,4 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-bot.run('NDQ0NzIwNzk2ODI1Mjg4NzA0.DdgKuw._DfF3XRmzNkfsqPcqYKVPOvRCd4', bot = True, reconnect = True)
+bot.run(Key, bot = True, reconnect = True)
